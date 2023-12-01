@@ -1,8 +1,7 @@
-import { Box, Container } from '@chakra-ui/react'
+import { Box, Button, Container } from '@chakra-ui/react'
 import Head from 'next/head'
 import React from 'react'
 import { SampleComponent } from '../components/SampleComponent'
-
 export default function Home() {
   return (
     <Box>
@@ -12,6 +11,9 @@ export default function Home() {
       </Head>
       <Container>
         <SampleComponent />
+        <div className='button'>
+          Button
+        </div>
       </Container>
     </Box>
   )

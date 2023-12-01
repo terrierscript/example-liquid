@@ -1,0 +1,63 @@
+:root{
+  --color: #73b3c0;
+  --h: 3em;
+}
+.button {
+  width:300px;
+  height: var(--h);
+  padding: 10px;
+  border-radius: 10px;
+  border: solid 1px var(--color);
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+.button::after {
+  z-index: -1;
+  background: 
+  linear-gradient(
+    color-mix(in srgb, var(--color), white 10%),
+    var(--color));
+    width: 300px;
+    height: calc( var(--h) * 1.2); 
+  /* var(--h); */
+  content: " ";
+  position: absolute;
+  overflow: hidden;
+  bottom: calc(var(--h) * -1 * 1.2) ;
+  /* bottom: calc(var(--h) * -1 * 1.2) ; */
+  left: 0px;
+  /* transition: 1s; */
+  /* animation: liquid 3s reverse; */
+}
+
+.button:hover::after{
+  animation: liquid 1s forwards ;
+  /* transition: 1s; */
+}
+
+@keyframes liquid {
+  0%{
+    border-radius: 150% 150% 0% 0%;
+    bottom: calc(var(--h) * -1 * 1.2) ;
+  }
+  25%{
+    border-radius: 1500% 150% 0% 0%;
+  }
+  50%{
+    border-radius: 150% 1500% 0% 0%;
+  }
+  75%{
+    border-radius: 300% 150% 0% 0%;
+  }
+  80%{
+   border-radius: 150% 300% 0% 0%;
+  }
+  85%{
+    border-radius: 10% 10% 0% 0%;
+  } 
+  100%{
+    border-radius: 10px;
+    bottom:0px;
+  }
+}
